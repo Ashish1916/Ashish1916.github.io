@@ -630,7 +630,6 @@ window.addEventListener('scroll', () => {
 }, {passive:true});
 const tik = document.querySelector('.ticker');
 if(tik){ const tr = tik.querySelector('.ti'); tik.addEventListener('mouseenter',()=>tr.style.animationPlayState='paused'); tik.addEventListener('mouseleave',()=>tr.style.animationPlayState='running'); }
-function sf(e){ e.preventDefault(); const b=e.target.querySelector('.cfsb'); b.textContent='Sent ✓'; b.style.background='var(--green)'; setTimeout(()=>{ b.textContent='Send Message →'; b.style.background=''; e.target.reset() },3000) }
 </script>
 </body>
 </html>
