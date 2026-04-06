@@ -7,349 +7,394 @@
 <title>Ashish Kosana — Data Analyst & Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #050d1f;
-  --navy2: #071228;
-  --navy3: #0a1a36;
-  --navy4: #0f2147;
-  --card: #0d1e3d;
-  --card2: #112449;
-  --blue: #2563eb;
-  --blue2: #3b82f6;
-  --blue3: #60a5fa;
-  --blue4: #93c5fd;
-  --green: #059669;
-  --green2: #10b981;
-  --green3: #34d399;
-  --amber: #d97706;
-  --amber2: #f59e0b;
-  --white: #ffffff;
-  --t1: #e2e8f0;
-  --t2: #94a3b8;
-  --t3: #64748b;
-  --t4: #334155;
-  --border: rgba(148,163,184,0.1);
-  --border2: rgba(148,163,184,0.06);
-  --glow: rgba(37,99,235,0.15);
-  --ff: 'Plus Jakarta Sans', sans-serif;
-  --fm: 'JetBrains Mono', monospace;
-  --max: 1160px;
+  --bg:       #FAFAF8;
+  --bg2:      #F4F3EF;
+  --bg3:      #ECEAE3;
+  --white:    #FFFFFF;
+  --ink:      #1A1814;
+  --ink2:     #3D3A33;
+  --ink3:     #6B6760;
+  --ink4:     #9B9892;
+  --blue:     #1D4ED8;
+  --blue2:    #2563EB;
+  --blue3:    #3B82F6;
+  --bluel:    #EFF6FF;
+  --bluel2:   #DBEAFE;
+  --green:    #15803D;
+  --greenl:   #DCFCE7;
+  --amber:    #B45309;
+  --amberl:   #FEF3C7;
+  --red:      #DC2626;
+  --redl:     #FEE2E2;
+  --purple:   #7C3AED;
+  --purplel:  #EDE9FE;
+  --teal:     #0F766E;
+  --border:   rgba(26,24,20,0.08);
+  --border2:  rgba(26,24,20,0.05);
+  --shadow:   0 1px 3px rgba(26,24,20,0.06), 0 4px 16px rgba(26,24,20,0.04);
+  --shadow2:  0 2px 8px rgba(26,24,20,0.08), 0 12px 40px rgba(26,24,20,0.06);
+  --ff:       'DM Sans', sans-serif;
+  --fs:       'DM Serif Display', serif;
+  --fm:       'DM Mono', monospace;
+  --max:      1120px;
+  --r:        10px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--navy); color: var(--t1); font-family: var(--ff); line-height: 1.6; overflow-x: hidden; }
+body { background: var(--bg); color: var(--ink); font-family: var(--ff); line-height: 1.6; overflow-x: hidden; }
 
-/* Subtle grid */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image:
-    linear-gradient(rgba(37,99,235,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37,99,235,0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none; z-index: 0;
-}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--ink4); border-radius: 2px; }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--navy); }
-::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
-
-/* NAV */
+/* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  height: 62px;
+  height: 60px;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 56px;
-  background: rgba(5,13,31,0.85);
-  backdrop-filter: blur(20px) saturate(180%);
+  padding: 0 48px;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--border);
 }
-.nl { font-family: var(--ff); font-size: 1rem; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.03em; }
-.nl span { color: var(--blue3); }
-.nc { display: flex; gap: 32px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
-.nc a { font-family: var(--fm); font-size: 0.7rem; color: var(--t3); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
-.nc a:hover, .nc a.on { color: var(--blue3); }
-.nr { display: flex; gap: 10px; align-items: center; }
-.ns { display: flex; align-items: center; gap: 6px; font-family: var(--fm); font-size: 0.62rem; color: var(--green2); letter-spacing: 0.06em; }
-.ns::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green2); animation: p 2s infinite; }
-@keyframes p { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
-.nb { font-family: var(--fm); font-size: 0.68rem; text-decoration: none; padding: 7px 14px; border-radius: 5px; letter-spacing: 0.04em; transition: all .2s; }
-.nb-o { color: var(--t2); border: 1px solid var(--border); }
-.nb-o:hover { border-color: var(--blue); color: var(--blue3); }
-.nb-b { background: var(--blue); color: white; border: 1px solid var(--blue); }
-.nb-b:hover { background: var(--blue2); }
+.nl { font-family: var(--fs); font-size: 1.15rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.nl em { color: var(--blue2); font-style: normal; }
+.nc { display: flex; gap: 28px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+.nc a { font-family: var(--fm); font-size: 0.68rem; color: var(--ink3); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; text-transform: uppercase; }
+.nc a:hover, .nc a.on { color: var(--blue2); }
+.nr { display: flex; gap: 8px; align-items: center; }
+.ns { display: flex; align-items: center; gap: 5px; font-family: var(--fm); font-size: 0.6rem; color: var(--green); letter-spacing: 0.08em; }
+.ns::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: pulse 2.2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.75)} }
+.nb { font-family: var(--fm); font-size: 0.65rem; text-decoration: none; padding: 7px 14px; border-radius: 6px; letter-spacing: 0.04em; transition: all .2s; }
+.nb-o { color: var(--ink3); border: 1px solid var(--border); background: var(--white); }
+.nb-o:hover { border-color: var(--blue2); color: var(--blue2); }
+.nb-b { background: var(--ink); color: white; border: 1px solid var(--ink); }
+.nb-b:hover { background: var(--blue2); border-color: var(--blue2); }
 
-/* SECTIONS */
-section { position: relative; z-index: 1; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 56px; }
+/* ── SECTIONS ── */
+section { position: relative; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 48px; }
 
-/* HERO */
-#hero { min-height: 100vh; padding-top: 62px; display: flex; flex-direction: column; }
-.hero-main {
-  flex: 1;
-  display: grid; grid-template-columns: 1fr 420px;
-  max-width: var(--max); margin: 0 auto; width: 100%;
-  padding: 72px 56px 56px; gap: 0;
+/* ── ABOUT / HERO ── */
+#hero { padding: 100px 0 0; background: var(--bg); }
+.about-wrap {
+  max-width: var(--max); margin: 0 auto; padding: 64px 48px 80px;
+  display: grid; grid-template-columns: 260px 1fr;
+  gap: 72px; align-items: start;
 }
-.hl { padding-right: 64px; display: flex; flex-direction: column; justify-content: center; }
-.avail {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--fm); font-size: 0.62rem; color: var(--green2);
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 5px 12px; border: 1px solid rgba(16,185,129,.25);
-  background: rgba(16,185,129,.06); border-radius: 4px;
-  width: fit-content; margin-bottom: 28px;
-}
-.avail::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green2); animation: p 2s infinite; }
-h1.hn {
-  font-family: var(--ff); font-weight: 800;
-  font-size: clamp(3rem, 5.5vw, 5.8rem);
-  line-height: 0.92; letter-spacing: -0.04em;
-  color: var(--white); margin-bottom: 6px;
-}
-h1.hn .acc { color: var(--blue3); }
-.hr2 {
-  font-family: var(--fm); font-size: 0.75rem; color: var(--t3);
-  letter-spacing: 0.08em; margin: 18px 0 28px;
-}
-.hr2 span { color: var(--t2); }
-.hd { font-size: 0.97rem; color: var(--t2); line-height: 1.75; max-width: 460px; margin-bottom: 36px; }
-.hd strong { color: var(--t1); font-weight: 600; }
-.hbtns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
-.btn-p {
-  font-family: var(--fm); font-size: 0.78rem;
-  background: var(--blue); color: white;
-  padding: 12px 24px; border-radius: 6px;
-  text-decoration: none; letter-spacing: 0.03em;
-  border: 1px solid var(--blue); transition: all .25s;
-}
-.btn-p:hover { background: var(--blue2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,.35); }
-.btn-s {
-  font-family: var(--fm); font-size: 0.78rem;
-  background: transparent; color: var(--t2);
-  padding: 12px 24px; border-radius: 6px;
-  text-decoration: none; letter-spacing: 0.03em;
-  border: 1px solid var(--border); transition: all .25s;
-}
-.btn-s:hover { border-color: var(--blue); color: var(--blue3); }
 
-/* PROOF PANEL */
-.hr { border-left: 1px solid var(--border); padding-left: 56px; display: flex; flex-direction: column; justify-content: center; }
-.plbl { font-family: var(--fm); font-size: 0.58rem; color: var(--t4); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; }
-.pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
-.pc { background: var(--card); padding: 18px 16px; transition: background .2s; cursor: default; }
-.pc:hover { background: var(--card2); }
-.pn { font-family: var(--ff); font-size: 1.9rem; font-weight: 800; line-height: 1; color: var(--white); margin-bottom: 3px; }
-.pn sup { font-size: 0.85rem; color: var(--blue3); font-family: var(--fm); font-weight: 400; }
-.pd { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); letter-spacing: 0.08em; text-transform: uppercase; }
-.pc.a .pn { color: var(--blue3); }
-.pc.b .pn { color: var(--green3); }
-.pc.c .pn { color: var(--amber2); }
+/* Photo column */
+.about-photo-col { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.photo-ring {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--blue2), var(--blue3));
+  box-shadow: var(--shadow2);
+}
+.photo-inner {
+  width: 100%; height: 100%; border-radius: 50%;
+  overflow: hidden; border: 3px solid var(--white);
+  background: var(--bg2);
+}
+.photo-inner img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.avail-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--fm); font-size: 0.58rem; color: var(--green);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 5px 12px; border: 1px solid rgba(21,128,61,.22);
+  background: var(--greenl); border-radius: 20px;
+}
+.avail-pill::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: pulse 2.2s infinite; }
+.social-row { display: flex; gap: 8px; }
+.soc-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--white);
+  color: var(--ink3); text-decoration: none; font-size: 13px;
+  transition: all .2s; box-shadow: var(--shadow);
+}
+.soc-btn:hover { border-color: var(--blue2); color: var(--blue2); transform: translateY(-2px); box-shadow: var(--shadow2); }
+.auth-card {
+  width: 100%; padding: 12px 14px;
+  background: var(--amberl); border: 1px solid rgba(180,83,9,.18);
+  border-radius: 8px; text-align: center;
+}
+.auth-card p { font-family: var(--fm); font-size: 0.6rem; color: var(--amber); letter-spacing: 0.04em; line-height: 1.65; }
+.auth-card strong { display: block; font-size: 0.62rem; color: var(--amber); margin-bottom: 2px; }
 
-/* CERT */
-.cb {
+/* Content column */
+.about-content { padding-top: 8px; }
+.section-tag { font-family: var(--fm); font-size: 0.58rem; color: var(--blue2); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.section-tag::before { content: ''; width: 18px; height: 1px; background: var(--blue2); }
+h1.name { font-family: var(--fs); font-size: clamp(2.6rem,5vw,4.2rem); line-height: 1.0; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 4px; }
+h1.name em { color: var(--blue2); font-style: italic; }
+.role-line { font-family: var(--fm); font-size: 0.72rem; color: var(--ink3); letter-spacing: 0.1em; text-transform: uppercase; margin: 14px 0 22px; }
+.role-line span { color: var(--ink2); }
+.bio { font-size: 0.97rem; color: var(--ink2); line-height: 1.8; max-width: 540px; margin-bottom: 28px; }
+.bio strong { color: var(--ink); font-weight: 600; }
+
+/* Metrics strip */
+.metrics-strip { display: flex; gap: 0; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 28px; background: var(--white); box-shadow: var(--shadow); }
+.metric-item { flex: 1; padding: 16px 14px; text-align: center; border-right: 1px solid var(--border); transition: background .2s; }
+.metric-item:last-child { border-right: none; }
+.metric-item:hover { background: var(--bluel); }
+.mv { font-family: var(--fs); font-size: 1.6rem; color: var(--blue2); line-height: 1; display: block; }
+.ml { font-family: var(--fm); font-size: 0.52rem; color: var(--ink4); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; display: block; }
+
+/* Cert badge */
+.cert-strip {
   display: flex; align-items: center; gap: 12px;
-  padding: 12px 14px;
-  background: linear-gradient(135deg, rgba(245,158,11,.08), rgba(245,158,11,.03));
-  border: 1px solid rgba(245,158,11,.2); border-radius: 6px; margin-bottom: 20px;
+  padding: 12px 16px; border-radius: 8px;
+  background: var(--amberl); border: 1px solid rgba(180,83,9,.18);
+  margin-bottom: 28px;
 }
-.ci { width: 32px; height: 32px; background: var(--amber); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
-.cn { font-family: var(--fm); font-size: 0.68rem; font-weight: 500; color: var(--amber2); display: block; margin-bottom: 1px; }
-.cs2 { font-family: var(--fm); font-size: 0.58rem; color: var(--t4); }
-.aut { font-family: var(--fm); font-size: 0.62rem; color: var(--t4); line-height: 1.65; padding-top: 14px; border-top: 1px solid var(--border2); }
-.aut strong { color: var(--t3); }
+.cert-icon { font-size: 18px; flex-shrink: 0; }
+.cert-text strong { font-family: var(--fm); font-size: 0.68rem; color: var(--amber); display: block; }
+.cert-text span { font-family: var(--fm); font-size: 0.58rem; color: var(--amber); opacity: 0.75; }
 
-/* TICKER */
-.ticker { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 0; overflow: hidden; }
-.ti { display: flex; animation: tk 32s linear infinite; white-space: nowrap; }
-.tic { font-family: var(--fm); font-size: 0.62rem; color: var(--t4); letter-spacing: 0.05em; padding: 0 32px; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.tv { color: var(--blue3); font-weight: 500; }
-.td2 { width: 3px; height: 3px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
+/* Hero CTA */
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-primary {
+  font-family: var(--fm); font-size: 0.75rem;
+  background: var(--ink); color: white;
+  padding: 11px 22px; border-radius: 7px;
+  text-decoration: none; letter-spacing: 0.04em;
+  border: 1px solid var(--ink); transition: all .25s;
+}
+.btn-primary:hover { background: var(--blue2); border-color: var(--blue2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,.25); }
+.btn-outline {
+  font-family: var(--fm); font-size: 0.75rem;
+  background: var(--white); color: var(--ink2);
+  padding: 11px 22px; border-radius: 7px;
+  text-decoration: none; letter-spacing: 0.04em;
+  border: 1px solid var(--border); transition: all .25s;
+  box-shadow: var(--shadow);
+}
+.btn-outline:hover { border-color: var(--blue2); color: var(--blue2); transform: translateY(-2px); }
+
+/* ── TICKER ── */
+.ticker { background: var(--ink); border-top: none; padding: 10px 0; overflow: hidden; }
+.ti { display: flex; animation: tk 38s linear infinite; white-space: nowrap; }
+.tic { font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,.35); letter-spacing: 0.05em; padding: 0 28px; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.tv { color: rgba(255,255,255,.7); font-weight: 500; }
+.td2 { width: 3px; height: 3px; background: var(--blue3); border-radius: 50%; flex-shrink: 0; }
 @keyframes tk { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-/* SEC HEADERS */
-.st { font-family: var(--fm); font-size: 0.6rem; color: var(--blue3); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-.st::before { content: ''; width: 16px; height: 1px; background: var(--blue3); }
-.sh { font-family: var(--ff); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; color: var(--white); margin-bottom: 48px; }
-.sh span { color: var(--blue3); }
+/* ── SECTION HEADERS ── */
+.st { font-family: var(--fm); font-size: 0.58rem; color: var(--blue2); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.st::before { content: ''; width: 18px; height: 1px; background: var(--blue2); }
+.sh { font-family: var(--fs); font-size: clamp(1.9rem,3.5vw,2.8rem); letter-spacing: -0.03em; line-height: 1.06; color: var(--ink); margin-bottom: 44px; }
+.sh span { color: var(--blue2); font-style: italic; }
 
-/* PROJECTS */
-#projects { padding: 100px 0; background: var(--navy2); }
-.pi { font-size: 0.9rem; color: var(--t3); max-width: 520px; line-height: 1.7; margin-bottom: 44px; margin-top: -32px; }
+/* ── PROJECTS ── */
+#projects { padding: 96px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+.pi { font-size: 0.9rem; color: var(--ink3); max-width: 500px; line-height: 1.7; margin-bottom: 44px; margin-top: -28px; }
 
-/* FEATURED */
 .pf {
   display: grid; grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
-  margin-bottom: 2px; text-decoration: none; color: inherit;
-  transition: border-color .3s;
+  border: 1px solid var(--border); border-radius: var(--r); overflow: hidden;
+  margin-bottom: 3px; text-decoration: none; color: inherit;
+  background: var(--white); box-shadow: var(--shadow);
+  transition: box-shadow .3s, transform .3s;
 }
-.pf:hover { border-color: rgba(59,130,246,.4); }
-.pfl { padding: 40px; background: var(--card); border-right: 1px solid var(--border); }
-.pfr { background: var(--card); padding: 40px; display: flex; flex-direction: column; justify-content: center; transition: background .2s; }
-.pf:hover .pfr { background: var(--card2); }
-
-/* CHARTS */
-.ctitle { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-.brow { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
-.blbl { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); width: 52px; text-align: right; flex-shrink: 0; }
-.bbg { flex: 1; height: 18px; background: rgba(255,255,255,.04); border-radius: 2px; overflow: hidden; }
-.bbar { height: 100%; border-radius: 2px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; }
-.bbar span { font-family: var(--fm); font-size: 0.52rem; color: rgba(255,255,255,.85); }
-.cnote { font-family: var(--fm); font-size: 0.5rem; color: var(--t4); margin-top: 8px; text-align: center; }
-.donut-sec { margin-top: 20px; }
-.drow { display: flex; align-items: center; gap: 16px; }
-.donut { position: relative; width: 72px; height: 72px; flex-shrink: 0; }
-.donut svg { transform: rotate(-90deg); }
-.dval { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.dv { font-family: var(--ff); font-size: 1rem; font-weight: 800; color: var(--green3); line-height: 1; }
-.dl { font-family: var(--fm); font-size: 0.42rem; color: var(--t4); letter-spacing: .06em; text-transform: uppercase; }
-.dleg { display: flex; flex-direction: column; gap: 5px; }
-.dli { display: flex; align-items: center; gap: 5px; font-family: var(--fm); font-size: 0.58rem; color: var(--t3); }
-.dld { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-
-/* PROJ SHARED */
-.pnum { font-family: var(--fm); font-size: 0.58rem; color: var(--t4); letter-spacing: 0.1em; margin-bottom: 14px; }
-.ptitle { font-family: var(--ff); font-size: 1.25rem; font-weight: 700; color: var(--white); letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 6px; }
-.pbiz { font-family: var(--fm); font-size: 0.65rem; color: var(--blue3); margin-bottom: 12px; line-height: 1.5; }
-.pdesc { font-size: 0.84rem; color: var(--t2); line-height: 1.7; margin-bottom: 16px; }
-.pmets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-.pm { font-family: var(--fm); font-size: 0.58rem; padding: 3px 8px; border-radius: 3px; letter-spacing: .03em; }
-.pmb { background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.22); color: var(--blue4); }
-.pma { background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.2); color: #fcd34d; }
-.pmg { background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.2); color: var(--green3); }
-.pst { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
-.s { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); padding: 2px 7px; border: 1px solid var(--border2); border-radius: 2px; }
-.pa { font-family: var(--fm); font-size: 0.68rem; color: var(--blue3); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: gap .2s; }
+.pf:hover { box-shadow: var(--shadow2); transform: translateY(-2px); }
+.pfl { padding: 40px; border-right: 1px solid var(--border); }
+.pfr { padding: 40px; display: flex; flex-direction: column; justify-content: center; background: var(--bg); }
+.pnum { font-family: var(--fm); font-size: 0.56rem; color: var(--ink4); letter-spacing: 0.1em; margin-bottom: 12px; }
+.ptitle { font-family: var(--fs); font-size: 1.35rem; color: var(--ink); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 6px; }
+.pbiz { font-family: var(--fm); font-size: 0.63rem; color: var(--blue2); margin-bottom: 12px; line-height: 1.5; }
+.pdesc { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 16px; }
+.pmets { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.pm { font-family: var(--fm); font-size: 0.56rem; padding: 3px 8px; border-radius: 4px; letter-spacing: .03em; }
+.pmb { background: var(--bluel); border: 1px solid var(--bluel2); color: var(--blue2); }
+.pma { background: var(--amberl); border: 1px solid rgba(180,83,9,.2); color: var(--amber); }
+.pmg { background: var(--greenl); border: 1px solid rgba(21,128,61,.2); color: var(--green); }
+.pst { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; }
+.s { font-family: var(--fm); font-size: 0.54rem; color: var(--ink4); padding: 2px 7px; border: 1px solid var(--border); border-radius: 3px; background: var(--bg2); }
+.pa { font-family: var(--fm); font-size: 0.66rem; color: var(--blue2); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: gap .2s; }
 .pa:hover { gap: 9px; }
 
-/* PROJ GRID */
-.prow { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-bottom: 2px; background: var(--border2); border-radius: 8px; overflow: hidden; }
+/* Chart elements */
+.ctitle { font-family: var(--fm); font-size: 0.54rem; color: var(--ink4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+.brow { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.blbl { font-family: var(--fm); font-size: 0.54rem; color: var(--ink4); width: 50px; text-align: right; flex-shrink: 0; }
+.bbg { flex: 1; height: 16px; background: var(--bg2); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+.bbar { height: 100%; border-radius: 3px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; }
+.bbar span { font-family: var(--fm); font-size: 0.5rem; color: white; }
+.cnote { font-family: var(--fm); font-size: 0.5rem; color: var(--ink4); margin-top: 8px; text-align: center; }
+.donut-sec { margin-top: 18px; }
+.drow { display: flex; align-items: center; gap: 16px; }
+.donut { position: relative; width: 68px; height: 68px; flex-shrink: 0; }
+.donut svg { transform: rotate(-90deg); }
+.dval { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.dv { font-family: var(--fs); font-size: 1rem; color: var(--green); line-height: 1; }
+.dl { font-family: var(--fm); font-size: 0.38rem; color: var(--ink4); letter-spacing: .06em; text-transform: uppercase; }
+.dleg { display: flex; flex-direction: column; gap: 5px; }
+.dli { display: flex; align-items: center; gap: 5px; font-family: var(--fm); font-size: 0.56rem; color: var(--ink3); }
+.dld { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* Project grid */
+.prow { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; margin-bottom: 3px; }
 .pc2 {
-  background: var(--card); padding: 28px 26px;
+  background: var(--white); padding: 26px 24px;
   text-decoration: none; color: inherit;
   position: relative; overflow: hidden;
-  transition: background .2s; display: block;
-  border: 1px solid transparent;
+  transition: all .2s; display: block;
+  border: 1px solid var(--border); border-radius: var(--r);
+  box-shadow: var(--shadow);
 }
-.pc2::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue), transparent); opacity: 0; transition: opacity .3s; }
-.pc2:hover { background: var(--card2); border-color: rgba(59,130,246,.15); }
-.pc2:hover::before { opacity: 1; }
-.pct { font-family: var(--ff); font-size: 0.94rem; font-weight: 700; color: var(--white); letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 5px; }
-.pcb { font-family: var(--fm); font-size: 0.62rem; color: var(--blue3); margin-bottom: 8px; line-height: 1.5; }
-.pcd { font-size: 0.8rem; color: var(--t2); line-height: 1.65; margin-bottom: 11px; }
+.pc2::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--blue2); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.pc2:hover { transform: translateY(-3px); box-shadow: var(--shadow2); }
+.pc2:hover::after { transform: scaleX(1); }
+.pct { font-family: var(--fs); font-size: 1rem; color: var(--ink); letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 5px; }
+.pcb { font-family: var(--fm); font-size: 0.6rem; color: var(--blue2); margin-bottom: 8px; line-height: 1.5; }
+.pcd { font-size: 0.8rem; color: var(--ink3); line-height: 1.65; margin-bottom: 10px; }
 
-/* SPARK */
-.spark { display: flex; align-items: flex-end; gap: 2px; height: 30px; margin-bottom: 12px; }
-.sb { flex: 1; border-radius: 1px 1px 0 0; min-width: 8px; opacity: .7; transition: opacity .2s; }
+/* Sparkline */
+.spark { display: flex; align-items: flex-end; gap: 2px; height: 28px; margin-bottom: 10px; }
+.sb { flex: 1; border-radius: 1px 1px 0 0; min-width: 8px; opacity: .5; transition: opacity .2s; }
 .pc2:hover .sb { opacity: 1; }
-.sv { font-family: var(--fm); font-size: 0.5rem; color: var(--green3); align-self: flex-end; margin-left: 5px; white-space: nowrap; }
+.sv { font-family: var(--fm); font-size: 0.5rem; color: var(--green); align-self: flex-end; margin-left: 4px; white-space: nowrap; }
 
-/* SKILLS */
-#skills { padding: 100px 0; }
-.skl { display: grid; grid-template-columns: 240px 1fr; gap: 64px; }
-.skls p { font-size: 0.88rem; color: var(--t2); line-height: 1.7; margin-bottom: 16px; }
-.sklm { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+/* ── SKILLS ── */
+#skills { padding: 96px 0; background: var(--bg); border-top: 1px solid var(--border); }
+.skl { display: grid; grid-template-columns: 220px 1fr; gap: 60px; }
+.skls p { font-size: 0.88rem; color: var(--ink3); line-height: 1.75; margin-bottom: 14px; }
+.sklm { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .skg { }
-.skgl { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 9px; padding-bottom: 6px; border-bottom: 1px solid var(--border2); }
+.skgl { font-family: var(--fm); font-size: 0.54rem; color: var(--ink4); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 1px solid var(--border); }
 .skgs { display: flex; flex-wrap: wrap; gap: 5px; }
-.sk { font-family: var(--fm); font-size: 0.68rem; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--border); color: var(--t2); background: var(--card); transition: all .2s; cursor: default; }
-.sk:hover { border-color: var(--blue); color: var(--blue3); background: rgba(37,99,235,.08); }
-.sk.c { border-color: rgba(59,130,246,.25); color: var(--blue3); background: rgba(37,99,235,.08); }
+.sk { font-family: var(--fm); font-size: 0.66rem; padding: 4px 10px; border-radius: 5px; border: 1px solid var(--border); color: var(--ink3); background: var(--white); transition: all .2s; cursor: default; box-shadow: var(--shadow); }
+.sk:hover { border-color: var(--blue2); color: var(--blue2); background: var(--bluel); }
+.sk.c { border-color: rgba(37,99,235,.25); color: var(--blue2); background: var(--bluel); }
 
-/* EXPERIENCE */
-#experience { padding: 100px 0; background: var(--navy2); }
-.er { display: grid; grid-template-columns: 190px 1fr; gap: 48px; padding: 40px 0; border-top: 1px solid var(--border); }
-.er:last-child { border-bottom: 1px solid var(--border); }
-.ep { font-family: var(--fm); font-size: 0.65rem; color: var(--t4); margin-bottom: 4px; }
-.eco { font-family: var(--fm); font-size: 0.68rem; color: var(--blue3); }
-.erole { font-family: var(--ff); font-size: 1.2rem; font-weight: 700; color: var(--white); letter-spacing: -0.03em; margin-bottom: 4px; }
-.eloc { font-family: var(--fm); font-size: 0.62rem; color: var(--t4); margin-bottom: 14px; }
-.eli { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.eli li { font-size: 0.86rem; color: var(--t2); padding-left: 16px; position: relative; line-height: 1.65; }
-.eli li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-family: var(--fm); font-size: 0.75rem; }
-.eli li strong { color: var(--t1); }
-
-/* EDUCATION */
-#education { padding: 70px 0 100px; }
-.edug { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.educ { background: var(--card); padding: 34px; transition: background .2s; }
-.educ:hover { background: var(--card2); }
-.edd { font-family: var(--ff); font-size: 1.1rem; font-weight: 700; color: var(--white); letter-spacing: -0.03em; margin-bottom: 4px; }
-.eds { font-family: var(--fm); font-size: 0.7rem; color: var(--blue3); margin-bottom: 3px; }
-.edp { font-family: var(--fm); font-size: 0.62rem; color: var(--t4); margin-bottom: 14px; }
-.edb { display: flex; gap: 6px; flex-wrap: wrap; }
-.eb { font-family: var(--fm); font-size: 0.6rem; padding: 3px 9px; border-radius: 3px; border: 1px solid var(--border); color: var(--t3); }
-.eb.g { border-color: rgba(245,158,11,.3); color: var(--amber2); background: rgba(245,158,11,.06); }
-
-/* CONTACT */
-#contact { padding: 100px 0; background: var(--navy2); }
-.cg { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-.cl p { font-size: 0.9rem; color: var(--t2); line-height: 1.75; margin-bottom: 28px; max-width: 380px; }
-.chs { display: flex; flex-direction: column; gap: 8px; }
-.ch { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border: 1px solid var(--border); border-radius: 6px; text-decoration: none; color: inherit; transition: all .2s; background: var(--card); }
-.ch:hover { border-color: rgba(59,130,246,.4); background: var(--card2); transform: translateX(3px); }
-.chi { width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-family: var(--fm); font-size: 0.62rem; color: var(--t3); flex-shrink: 0; background: var(--navy3); }
-.chl { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: 1px; }
-.chv { font-size: 0.84rem; color: var(--t1); }
-.cf { display: flex; flex-direction: column; gap: 12px; }
-.cfg { display: flex; flex-direction: column; gap: 5px; }
-.cfl { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); letter-spacing: .1em; text-transform: uppercase; }
-.cfi, .cfta {
-  background: var(--card); border: 1px solid var(--border);
-  padding: 11px 14px; color: var(--t1);
-  font-family: var(--ff); font-size: 0.86rem;
-  outline: none; transition: border-color .2s; border-radius: 5px; width: 100%;
+/* ── EXPERIENCE ── */
+#experience { padding: 96px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+.er {
+  display: grid; grid-template-columns: 180px 1fr;
+  gap: 40px; padding: 36px 0;
+  border-top: 1px solid var(--border);
 }
-.cfi:focus, .cfta:focus { border-color: var(--blue); }
+.er:last-child { border-bottom: 1px solid var(--border); }
+.ep { font-family: var(--fm); font-size: 0.62rem; color: var(--ink4); margin-bottom: 3px; }
+.eco { font-family: var(--fm); font-size: 0.66rem; color: var(--blue2); font-weight: 500; }
+.erole { font-family: var(--fs); font-size: 1.2rem; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 3px; }
+.eloc { font-family: var(--fm); font-size: 0.6rem; color: var(--ink4); margin-bottom: 14px; }
+.eli { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.eli li { font-size: 0.86rem; color: var(--ink3); padding-left: 16px; position: relative; line-height: 1.65; }
+.eli li::before { content: '—'; position: absolute; left: 0; color: var(--blue2); font-family: var(--fm); font-size: 0.75rem; }
+.eli li strong { color: var(--ink); }
+
+/* ── EDUCATION ── */
+#education { padding: 70px 0 96px; border-top: 1px solid var(--border); }
+.edug { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.educ {
+  background: var(--white); padding: 32px;
+  border: 1px solid var(--border); border-radius: var(--r);
+  transition: all .2s; box-shadow: var(--shadow);
+}
+.educ:hover { transform: translateY(-2px); box-shadow: var(--shadow2); }
+.edd { font-family: var(--fs); font-size: 1.15rem; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 4px; }
+.eds { font-family: var(--fm); font-size: 0.68rem; color: var(--blue2); margin-bottom: 3px; }
+.edp { font-family: var(--fm); font-size: 0.6rem; color: var(--ink4); margin-bottom: 14px; }
+.edb { display: flex; gap: 5px; flex-wrap: wrap; }
+.eb { font-family: var(--fm); font-size: 0.58rem; padding: 3px 9px; border-radius: 4px; border: 1px solid var(--border); color: var(--ink4); background: var(--bg2); }
+.eb.g { border-color: rgba(180,83,9,.25); color: var(--amber); background: var(--amberl); }
+
+/* ── CERTIFICATIONS ── */
+#certifications { padding: 80px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: -16px; }
+.cert-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 20px; box-shadow: var(--shadow); transition: all .2s;
+}
+.cert-card:hover { transform: translateY(-2px); box-shadow: var(--shadow2); border-color: var(--blue2); }
+.cert-card .ci { font-size: 20px; margin-bottom: 10px; display: block; }
+.cert-card strong { font-family: var(--fm); font-size: 0.7rem; color: var(--ink); display: block; margin-bottom: 3px; line-height: 1.4; }
+.cert-card span { font-family: var(--fm); font-size: 0.58rem; color: var(--ink4); }
+
+/* ── CONTACT ── */
+#contact { padding: 96px 0; border-top: 1px solid var(--border); }
+.cg { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.cl p { font-size: 0.9rem; color: var(--ink3); line-height: 1.75; margin-bottom: 26px; max-width: 380px; }
+.chs { display: flex; flex-direction: column; gap: 8px; }
+.ch {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 16px; border: 1px solid var(--border); border-radius: 8px;
+  text-decoration: none; color: inherit; transition: all .2s;
+  background: var(--white); box-shadow: var(--shadow);
+}
+.ch:hover { border-color: var(--blue2); transform: translateX(3px); box-shadow: var(--shadow2); }
+.chi { width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--fm); font-size: 0.6rem; color: var(--ink4); flex-shrink: 0; background: var(--bg2); }
+.chl { font-family: var(--fm); font-size: 0.54rem; color: var(--ink4); letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: 1px; }
+.chv { font-size: 0.84rem; color: var(--ink); }
+.cf { display: flex; flex-direction: column; gap: 12px; }
+.cfg { display: flex; flex-direction: column; gap: 4px; }
+.cfl { font-family: var(--fm); font-size: 0.54rem; color: var(--ink4); letter-spacing: .1em; text-transform: uppercase; }
+.cfi, .cfta {
+  background: var(--white); border: 1px solid var(--border);
+  padding: 10px 14px; color: var(--ink);
+  font-family: var(--ff); font-size: 0.88rem;
+  outline: none; transition: border-color .2s; border-radius: 6px; width: 100%;
+  box-shadow: var(--shadow);
+}
+.cfi:focus, .cfta:focus { border-color: var(--blue2); box-shadow: 0 0 0 3px var(--bluel); }
 .cfta { min-height: 96px; resize: vertical; }
 .cfsb {
-  font-family: var(--fm); font-size: 0.74rem;
-  background: var(--blue); color: white; border: none;
-  padding: 12px 24px; border-radius: 5px; cursor: pointer;
+  font-family: var(--fm); font-size: 0.72rem;
+  background: var(--ink); color: white; border: none;
+  padding: 12px 24px; border-radius: 6px; cursor: pointer;
   letter-spacing: .04em; transition: all .2s; align-self: flex-start;
 }
-.cfsb:hover { background: var(--blue2); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,99,235,.35); }
-.cfd { font-family: var(--fm); font-size: 0.56rem; color: var(--t4); margin-top: 8px; line-height: 1.6; }
-.cfd a { color: var(--blue3); text-decoration: none; }
+.cfsb:hover { background: var(--blue2); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,99,235,.3); }
 
-/* FOOTER */
-footer { background: var(--navy); border-top: 1px solid var(--border); padding: 22px 56px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
-.flo { font-family: var(--ff); font-size: 0.9rem; font-weight: 800; color: var(--t3); letter-spacing: -0.03em; }
-.flo span { color: var(--blue3); }
-.fco { font-family: var(--fm); font-size: 0.58rem; color: var(--t4); }
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); border-top: none;
+  padding: 22px 48px; display: flex;
+  align-items: center; justify-content: space-between;
+}
+.flo { font-family: var(--fs); font-size: 1rem; color: rgba(255,255,255,.5); }
+.flo em { color: var(--blue3); font-style: normal; }
+.fco { font-family: var(--fm); font-size: 0.55rem; color: rgba(255,255,255,.3); }
 
-/* REVEAL */
-.rv { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+/* ── REVEAL ── */
+.rv { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
 .rv.in { opacity: 1; transform: none; }
 .rv.d1 { transition-delay: .08s; }
 .rv.d2 { transition-delay: .16s; }
 .rv.d3 { transition-delay: .24s; }
 
-/* RESPONSIVE */
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
   nav { padding: 0 18px; } .nc { display: none; }
   .wrap { padding: 0 18px; }
-  .hero-main { grid-template-columns: 1fr; padding: 52px 18px 40px; }
-  .hl { padding-right: 0; margin-bottom: 40px; }
-  .hr { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 32px; }
+  .about-wrap { grid-template-columns: 1fr; padding: 48px 18px 60px; gap: 36px; }
+  .about-photo-col { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .photo-ring { width: 120px; height: 120px; }
   .pf { grid-template-columns: 1fr; } .pfl { border-right: none; border-bottom: 1px solid var(--border); }
   .prow { grid-template-columns: 1fr; }
-  .skl { grid-template-columns: 1fr; gap: 32px; } .sklm { grid-template-columns: 1fr; }
+  .skl { grid-template-columns: 1fr; gap: 28px; } .sklm { grid-template-columns: 1fr; }
   .er { grid-template-columns: 1fr; gap: 8px; }
   .edug { grid-template-columns: 1fr; }
-  .cg { grid-template-columns: 1fr; gap: 40px; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .cg { grid-template-columns: 1fr; gap: 36px; }
   footer { padding: 18px; flex-direction: column; gap: 8px; text-align: center; }
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="nl" href="#hero">Ashish <span>Kosana</span></a>
+  <a class="nl" href="#hero">Ashish <em>Kosana</em></a>
   <ul class="nc">
+    <li><a href="#hero">about</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#skills">skills</a></li>
     <li><a href="#experience">experience</a></li>
@@ -359,50 +404,81 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
     <div class="ns">Available now</div>
     <a href="https://www.linkedin.com/in/ashish-kosana-3b6712260/" target="_blank" class="nb nb-o">LinkedIn ↗</a>
     <a href="https://github.com/Ashish1916" target="_blank" class="nb nb-o">GitHub ↗</a>
-  <a href="resume.pdf" download="Ashish_Kosana_Resume.pdf" class="nb nb-b">Resume ↓</a>
+    <a href="resume.pdf" download="Ashish_Kosana_Resume.pdf" class="nb nb-b">Resume ↓</a>
   </div>
 </nav>
 
+<!-- ABOUT / HERO -->
 <section id="hero">
-  <div class="hero-main">
-    <div class="hl rv">
-      <div class="avail">Open to full-time roles &nbsp;·&nbsp; OPT authorized</div>
-      <h1 class="hn">Ashish<br><span class="acc">Kosana</span></h1>
-      <p class="hr2"><span>Data Analyst</span> &nbsp;·&nbsp; <span>Data Engineer</span> &nbsp;·&nbsp; <span>ML Engineer</span></p>
-      <p class="hd">I build <strong>data pipelines, analytical dashboards, and machine learning systems</strong> that turn raw data into decisions companies act on. B.S. Computer Science, UMass Lowell. <strong>DP-300 Certified.</strong> Based in Lowell, MA — open to relocation.</p>
-      <div class="hbtns">
-        <a href="#projects" class="btn-p">View Projects ↓</a>
-        <a href="https://github.com/Ashish1916" target="_blank" class="btn-s">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/ashish-kosana-3b6712260/" target="_blank" class="btn-s">LinkedIn ↗</a>
+  <div class="about-wrap">
+    <!-- Photo column -->
+    <div class="about-photo-col rv">
+      <div class="photo-ring">
+        <div class="photo-inner">
+          <img src="ashish.jpeg" alt="Ashish Kosana" onerror="this.style.background='#DBEAFE';this.style.display='flex';this.alt=''">
+        </div>
+      </div>
+      <div class="avail-pill">Open to roles</div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/ashish-kosana-3b6712260/" target="_blank" class="soc-btn" title="LinkedIn">in</a>
+        <a href="https://github.com/Ashish1916" target="_blank" class="soc-btn" title="GitHub">gh</a>
+        <a href="mailto:ashishkosana@gmail.com" class="soc-btn" title="Email">✉</a>
+        <a href="ashishkosana.com" target="_blank" class="soc-btn" title="Portfolio">↗</a>
+      </div>
+      <div class="auth-card">
+        <strong>Work Authorization</strong>
+        <p>F-1 OPT · Currently authorized<br>Open to H-1B sponsorship<br>Relocation: nationwide</p>
       </div>
     </div>
-    <div class="hr rv d2">
-      <div class="plbl">Proof of work</div>
-      <div class="pgrid">
-        <div class="pc a"><div class="pn">0.91<sup>auc</sup></div><div class="pd">Best model score</div></div>
-        <div class="pc b"><div class="pn">500<sup>K</sup></div><div class="pd">Rows processed</div></div>
-        <div class="pc"><div class="pn">7<sup>+</sup></div><div class="pd">Projects shipped</div></div>
-        <div class="pc c"><div class="pn">3.51<sup>gpa</sup></div><div class="pd">Dean's List · UML</div></div>
+
+    <!-- Content column -->
+    <div class="about-content rv d1">
+      <div class="section-tag">About me</div>
+      <h1 class="name">Ashish<br><em>Kosana</em></h1>
+      <p class="role-line"><span>Data Analyst</span> &nbsp;·&nbsp; <span>Data Engineer</span> &nbsp;·&nbsp; <span>ML Engineer</span></p>
+      <p class="bio">I build <strong>data pipelines, analytical dashboards, and machine learning systems</strong> that turn raw data into decisions companies act on. B.S. Computer Science, UMass Lowell — GPA 3.51, Dean's List. <strong>DP-300 Certified.</strong> Based in Lowell, MA — open to nationwide relocation and H-1B sponsorship.</p>
+
+      <!-- Metrics -->
+      <div class="metrics-strip rv d2">
+        <div class="metric-item"><span class="mv">$16.6K</span><span class="ml">Spend found</span></div>
+        <div class="metric-item"><span class="mv">0.91</span><span class="ml">Best AUC</span></div>
+        <div class="metric-item"><span class="mv">500K</span><span class="ml">Rows processed</span></div>
+        <div class="metric-item"><span class="mv">7+</span><span class="ml">Projects</span></div>
+        <div class="metric-item"><span class="mv">3.51</span><span class="ml">GPA</span></div>
       </div>
-      <div class="cb">
-        <div class="ci">🏆</div>
-        <div><span class="cn">Azure Database Administrator Associate</span><span class="cs2">Microsoft Certified · DP-300 · 2025</span></div>
+
+      <!-- Cert -->
+      <div class="cert-strip rv d2">
+        <span class="cert-icon">🏆</span>
+        <div class="cert-text">
+          <strong>Azure Database Administrator Associate (DP-300)</strong>
+          <span>Microsoft Certified · 2025</span>
+        </div>
       </div>
-      <div class="aut"><strong>Work authorization:</strong> F-1 OPT · Currently authorized<br>Open to H-1B sponsorship · Relocation: nationwide</div>
+
+      <!-- CTAs -->
+      <div class="hero-btns rv d3">
+        <a href="#projects" class="btn-primary">View Projects ↓</a>
+        <a href="resume.pdf" download="Ashish_Kosana_Resume.pdf" class="btn-outline">Download Resume ↓</a>
+        <a href="https://github.com/Ashish1916" target="_blank" class="btn-outline">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/ashish-kosana-3b6712260/" target="_blank" class="btn-outline">LinkedIn ↗</a>
+      </div>
     </div>
   </div>
+
+  <!-- Ticker -->
   <div class="ticker">
     <div class="ti">
-      <span class="tic"><span class="td2"></span>AWS Cost Dashboard<span class="tv">500K rows · $16K+ savings identified</span></span>
+      <span class="tic"><span class="td2"></span>AWS Cost Dashboard<span class="tv">500K rows · $16,623 savings identified</span></span>
       <span class="tic"><span class="td2"></span>Bank Churn Classifier<span class="tv">AUC 0.83 · 80.5% high-risk precision</span></span>
-      <span class="tic"><span class="td2"></span>Depression Analysis<span class="tv">AUC 0.88 · 5,000 students analyzed</span></span>
+      <span class="tic"><span class="td2"></span>Depression Analysis<span class="tv">AUC 0.88 · 5,000 students · p&lt;0.001</span></span>
       <span class="tic"><span class="td2"></span>ML Pipeline<span class="tv">AUC 0.91 · MLflow · Docker · AWS</span></span>
       <span class="tic"><span class="td2"></span>Sales Analytics<span class="tv">Star schema · 15+ DAX measures · RLS</span></span>
       <span class="tic"><span class="td2"></span>Sentiment NLP<span class="tv">AUC 1.0 · TF-IDF pipeline</span></span>
       <span class="tic"><span class="td2"></span>LSTM Language Model<span class="tv">100% top-5 accuracy</span></span>
-      <span class="tic"><span class="td2"></span>AWS Cost Dashboard<span class="tv">500K rows · $16K+ savings identified</span></span>
+      <span class="tic"><span class="td2"></span>AWS Cost Dashboard<span class="tv">500K rows · $16,623 savings identified</span></span>
       <span class="tic"><span class="td2"></span>Bank Churn Classifier<span class="tv">AUC 0.83 · 80.5% high-risk precision</span></span>
-      <span class="tic"><span class="td2"></span>Depression Analysis<span class="tv">AUC 0.88 · 5,000 students analyzed</span></span>
+      <span class="tic"><span class="td2"></span>Depression Analysis<span class="tv">AUC 0.88 · 5,000 students · p&lt;0.001</span></span>
       <span class="tic"><span class="td2"></span>ML Pipeline<span class="tv">AUC 0.91 · MLflow · Docker · AWS</span></span>
       <span class="tic"><span class="td2"></span>Sales Analytics<span class="tv">Star schema · 15+ DAX measures · RLS</span></span>
       <span class="tic"><span class="td2"></span>Sentiment NLP<span class="tv">AUC 1.0 · TF-IDF pipeline</span></span>
@@ -411,6 +487,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
     <div class="rv"><div class="st">Selected work</div><h2 class="sh">Projects that solve <span>real problems</span></h2></div>
@@ -421,8 +498,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <div class="pnum">01 — FEATURED PROJECT</div>
         <h3 class="ptitle">AWS Usage & Cost Intelligence Dashboard</h3>
         <p class="pbiz">Cloud costs are the fastest-growing budget line — yet most teams lack real-time anomaly detection.</p>
-        <p class="pdesc">End-to-end pipeline processing 500,000 AWS billing records. IQR statistical anomaly detection flags $16,600+ in recoverable spend. Executive-ready insights delivered without analyst intervention.</p>
-        <div class="pmets"><span class="pm pmb">500K rows</span><span class="pm pma">$16,600+ savings</span><span class="pm pmg">IQR anomaly detection</span><span class="pm pmb">45% anomalous spend</span></div>
+        <p class="pdesc">End-to-end pipeline processing 500,000 AWS billing records. IQR statistical anomaly detection flags $16,623 in recoverable spend. Executive-ready insights delivered without analyst intervention.</p>
+        <div class="pmets"><span class="pm pmb">500K rows</span><span class="pm pma">$16,623 savings</span><span class="pm pmg">IQR anomaly detection</span><span class="pm pmb">45% anomalous spend</span></div>
         <div class="pst"><span class="s">Python</span><span class="s">SQL</span><span class="s">Snowflake</span><span class="s">Tableau</span><span class="s">AWS</span><span class="s">Pandas</span></div>
         <span class="pa">View code on GitHub →</span>
       </div>
@@ -432,21 +509,21 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <div class="brow"><span class="blbl">S3</span><div class="bbg"><div class="bbar" style="width:55%;background:linear-gradient(90deg,#059669,#10b981)"><span>20%</span></div></div></div>
         <div class="brow"><span class="blbl">RDS</span><div class="bbg"><div class="bbar" style="width:42%;background:linear-gradient(90deg,#7c3aed,#8b5cf6)"><span>15%</span></div></div></div>
         <div class="brow"><span class="blbl">Lambda</span><div class="bbg"><div class="bbar" style="width:28%;background:linear-gradient(90deg,#0f766e,#14b8a6)"><span>10%</span></div></div></div>
-        <div class="brow"><span class="blbl">Other</span><div class="bbg"><div class="bbar" style="width:55%;background:linear-gradient(90deg,#475569,#64748b)"><span>20%</span></div></div></div>
+        <div class="brow"><span class="blbl">Other</span><div class="bbg"><div class="bbar" style="width:55%;background:linear-gradient(90deg,#64748b,#94a3b8)"><span>20%</span></div></div></div>
         <div class="donut-sec">
-          <div class="ctitle" style="margin-top:18px">Anomaly Detection Output</div>
+          <div class="ctitle" style="margin-top:16px">Anomaly Detection Output</div>
           <div class="drow">
             <div class="donut">
-              <svg width="72" height="72" viewBox="0 0 72 72">
-                <circle cx="36" cy="36" r="28" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="9"/>
-                <circle cx="36" cy="36" r="28" fill="none" stroke="#10b981" stroke-width="9" stroke-dasharray="79 97" stroke-linecap="round"/>
+              <svg width="68" height="68" viewBox="0 0 68 68">
+                <circle cx="34" cy="34" r="26" fill="none" stroke="var(--bg3)" stroke-width="8"/>
+                <circle cx="34" cy="34" r="26" fill="none" stroke="#15803d" stroke-width="8" stroke-dasharray="73 90" stroke-linecap="round"/>
               </svg>
               <div class="dval"><span class="dv">45%</span><span class="dl">anomalous</span></div>
             </div>
             <div class="dleg">
-              <div class="dli"><div class="dld" style="background:#10b981"></div>Anomalous: $27,706</div>
-              <div class="dli"><div class="dld" style="background:rgba(255,255,255,.12)"></div>Normal: $32,961</div>
-              <div class="dli"><div class="dld" style="background:#f59e0b"></div>Recoverable: $16,623</div>
+              <div class="dli"><div class="dld" style="background:#15803d"></div>Anomalous: $27,706</div>
+              <div class="dli"><div class="dld" style="background:var(--bg3)"></div>Normal: $32,961</div>
+              <div class="dli"><div class="dld" style="background:#b45309"></div>Recoverable: $16,623</div>
             </div>
           </div>
         </div>
@@ -454,14 +531,14 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
       </div>
     </a>
 
-    <div class="prow rv d1">
+    <div class="prow rv d1" style="margin-top:3px">
       <a class="pc2" href="https://github.com/Ashish1916/Bank-churn-risk-classifier" target="_blank">
         <div class="pnum">02</div>
         <div class="spark"><div class="sb" style="height:38%;background:#ef4444"></div><div class="sb" style="height:52%;background:#ef4444"></div><div class="sb" style="height:44%;background:#ef4444"></div><div class="sb" style="height:68%;background:#ef4444"></div><div class="sb" style="height:58%;background:#ef4444"></div><div class="sb" style="height:78%;background:#ef4444"></div><div class="sb" style="height:100%;background:#ef4444"></div><span class="sv">AUC 0.83</span></div>
         <h3 class="pct">Bank Churn Risk Classifier</h3>
         <p class="pcb">Acquiring a new customer costs 5–7× more than retaining one.</p>
-        <p class="pcd">ANN model scoring customers by churn probability. High-risk segment captures 80.5% of actual churners — enabling targeted retention before revenue is lost.</p>
-        <div class="pmets" style="margin-bottom:10px"><span class="pm pma">AUC 0.83</span><span class="pm pmg">80.5% precision</span></div>
+        <p class="pcd">ANN model scoring customers by churn probability. High-risk segment captures 80.5% of actual churners.</p>
+        <div class="pmets" style="margin-bottom:8px"><span class="pm pma">AUC 0.83</span><span class="pm pmg">80.5% precision</span></div>
         <div class="pst"><span class="s">Python</span><span class="s">Scikit-learn</span><span class="s">ANN</span></div>
         <span class="pa" style="margin-top:10px;display:inline-flex">GitHub →</span>
       </a>
@@ -470,8 +547,8 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <div class="spark"><div class="sb" style="height:30%;background:#3b82f6"></div><div class="sb" style="height:48%;background:#3b82f6"></div><div class="sb" style="height:62%;background:#3b82f6"></div><div class="sb" style="height:77%;background:#3b82f6"></div><div class="sb" style="height:68%;background:#3b82f6"></div><div class="sb" style="height:88%;background:#3b82f6"></div><div class="sb" style="height:100%;background:#3b82f6"></div><span class="sv">AUC 0.88</span></div>
         <h3 class="pct">Student Mental Health Risk Analysis</h3>
         <p class="pcb">1 in 3 students shows depression symptoms — institutions can't identify who.</p>
-        <p class="pcd">Multivariable correlation across 5,000 students. Sleep deprivation and financial stress as top risk factors (p &lt; 0.001). Interactive Tableau dashboard for program staff.</p>
-        <div class="pmets" style="margin-bottom:10px"><span class="pm pmb">AUC 0.88</span><span class="pm pmg">5,000 students</span></div>
+        <p class="pcd">Multivariable correlation across 5,000 students. Sleep deprivation and financial stress as top risk factors (p &lt; 0.001).</p>
+        <div class="pmets" style="margin-bottom:8px"><span class="pm pmb">AUC 0.88</span><span class="pm pmg">5,000 students</span></div>
         <div class="pst"><span class="s">Python</span><span class="s">SciPy</span><span class="s">R</span><span class="s">Tableau</span></div>
         <span class="pa" style="margin-top:10px;display:inline-flex">GitHub →</span>
       </a>
@@ -481,20 +558,20 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <h3 class="pct">Sales Performance Analytics Platform</h3>
         <p class="pcb">Fragmented Excel reports create inconsistent metrics and no forecasting.</p>
         <p class="pcd">Star-schema Power BI platform with margin decomposition, YoY growth, and revenue forecasting. Row-level security for regional managers.</p>
-        <div class="pmets" style="margin-bottom:10px"><span class="pm pma">15+ DAX measures</span><span class="pm pmb">Star schema</span></div>
+        <div class="pmets" style="margin-bottom:8px"><span class="pm pma">15+ DAX measures</span><span class="pm pmb">Star schema</span></div>
         <div class="pst"><span class="s">Power BI</span><span class="s">DAX</span><span class="s">SQL Server</span><span class="s">RLS</span></div>
         <span class="pa" style="margin-top:10px;display:inline-flex">GitHub →</span>
       </a>
     </div>
 
-    <div class="prow rv d2">
+    <div class="prow rv d2" style="margin-top:3px">
       <a class="pc2" href="https://github.com/Ashish1916/student-performance-ml-pipeline" target="_blank">
         <div class="pnum">05</div>
         <div class="spark"><div class="sb" style="height:52%;background:#10b981"></div><div class="sb" style="height:64%;background:#10b981"></div><div class="sb" style="height:74%;background:#10b981"></div><div class="sb" style="height:84%;background:#10b981"></div><div class="sb" style="height:78%;background:#10b981"></div><div class="sb" style="height:94%;background:#10b981"></div><div class="sb" style="height:100%;background:#10b981"></div><span class="sv">AUC 0.91</span></div>
         <h3 class="pct">Student Performance ML Pipeline</h3>
         <p class="pcb">Academic failure is predictable — if you have the infrastructure to act early.</p>
-        <p class="pcd">End-to-end ML pipeline with MLflow tracking, multi-model comparison, Docker containerization on AWS Elastic Beanstalk. Best model AUC 0.91.</p>
-        <div class="pmets" style="margin-bottom:10px"><span class="pm pmg">AUC 0.91</span><span class="pm pmb">MLflow tracked</span></div>
+        <p class="pcd">End-to-end ML pipeline with MLflow tracking, multi-model comparison, Docker containerization on AWS Elastic Beanstalk.</p>
+        <div class="pmets" style="margin-bottom:8px"><span class="pm pmg">AUC 0.91</span><span class="pm pmb">MLflow tracked</span></div>
         <div class="pst"><span class="s">Python</span><span class="s">MLflow</span><span class="s">Docker</span><span class="s">AWS</span></div>
         <span class="pa" style="margin-top:10px;display:inline-flex">GitHub →</span>
       </a>
@@ -504,7 +581,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <h3 class="pct">Sentiment Analysis NLP Pipeline</h3>
         <p class="pcb">Manual review analysis doesn't scale past a few hundred records.</p>
         <p class="pcd">TF-IDF feature extraction and classification pipeline for 2,000 reviews. Top keyword identification with probability calibration output.</p>
-        <div class="pmets" style="margin-bottom:10px"><span class="pm pmg">AUC 1.0</span><span class="pm pmb">TF-IDF · NLP</span></div>
+        <div class="pmets" style="margin-bottom:8px"><span class="pm pmg">AUC 1.0</span><span class="pm pmb">TF-IDF · NLP</span></div>
         <div class="pst"><span class="s">Python</span><span class="s">NLP</span><span class="s">Scikit-learn</span></div>
         <span class="pa" style="margin-top:10px;display:inline-flex">GitHub →</span>
       </a>
@@ -514,7 +591,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
         <h3 class="pct">Next Word Prediction — LSTM & GRU</h3>
         <p class="pcb">Sequence modeling is the foundation of modern language systems.</p>
         <p class="pcd">N-gram language model implementing LSTM and GRU architectures. 100% top-5 accuracy on data science corpus with multi-model comparison.</p>
-        <div class="pmets" style="margin-bottom:10px"><span class="pm pmg">100% top-5 acc.</span></div>
+        <div class="pmets" style="margin-bottom:8px"><span class="pm pmg">100% top-5 acc.</span></div>
         <div class="pst"><span class="s">Python</span><span class="s">LSTM</span><span class="s">GRU</span><span class="s">NLP</span></div>
         <span class="pa" style="margin-top:10px;display:inline-flex">GitHub →</span>
       </a>
@@ -522,6 +599,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
     <div class="rv"><div class="st">Capabilities</div><h2 class="sh">Tools I work <span>with daily</span></h2></div>
@@ -529,9 +607,9 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
       <div class="skls">
         <p>My stack covers the full data lifecycle — from raw ingestion and SQL transformation through machine learning and executive-ready visualization.</p>
         <p>Highlighted tools are production project tools. All others are supporting competencies.</p>
-        <div class="cb" style="margin-top:20px">
-          <div class="ci">🏆</div>
-          <div><span class="cn">DP-300 Certified</span><span class="cs2">Azure Database Administrator · Microsoft</span></div>
+        <div class="cert-strip" style="margin-top:20px;background:var(--amberl);border-color:rgba(180,83,9,.18)">
+          <span class="cert-icon">🏆</span>
+          <div class="cert-text"><strong>DP-300 Certified</strong><span>Azure Database Administrator · Microsoft</span></div>
         </div>
       </div>
       <div class="sklm">
@@ -546,6 +624,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
     <div class="rv"><div class="st">Experience</div><h2 class="sh">Where I've <span>worked</span></h2></div>
@@ -568,6 +647,7 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <div class="rv"><div class="st">Education</div><h2 class="sh">Academic <span>background</span></h2></div>
@@ -588,44 +668,87 @@ footer { background: var(--navy); border-top: 1px solid var(--border); padding: 
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="wrap">
+    <div class="rv"><div class="st">Certifications</div><h2 class="sh">Credentials & <span>learning</span></h2></div>
+    <div class="cert-grid rv d1">
+      <div class="cert-card">
+        <span class="ci">🏆</span>
+        <strong>Microsoft Certified: Azure Database Administrator Associate (DP-300)</strong>
+        <span>Microsoft · 2025</span>
+      </div>
+      <div class="cert-card">
+        <span class="ci">📊</span>
+        <strong>Complete Data Science, ML, Deep Learning & NLP Bootcamp</strong>
+        <span>Udemy · 2025</span>
+      </div>
+      <div class="cert-card">
+        <span class="ci">📈</span>
+        <strong>Complete Data Analyst Bootcamp: Basics to Advanced</strong>
+        <span>Udemy · 2026</span>
+      </div>
+      <div class="cert-card">
+        <span class="ci">🎓</span>
+        <strong>Career Essentials in Data Analysis</strong>
+        <span>Microsoft & LinkedIn Learning</span>
+      </div>
+      <div class="cert-card">
+        <span class="ci">🐍</span>
+        <strong>Data Analysis with Python</strong>
+        <span>freeCodeCamp</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="rv"><div class="st">Get in touch</div><h2 class="sh">Let's work <span>together</span></h2></div>
     <div class="cg">
       <div class="rv d1">
-        <p>I'm actively looking for full-time Data Analyst, Data Engineer, and ML Engineer roles. Authorized to work in the U.S. on F-1 OPT. Open to nationwide relocation and H-1B sponsorship.</p>
+        <p class="cl" style="display:block;font-size:.9rem;color:var(--ink3);line-height:1.75;margin-bottom:26px;max-width:380px">I'm actively looking for full-time Data Analyst, Data Engineer, and ML Engineer roles. Authorized to work in the U.S. on F-1 OPT. Open to nationwide relocation and H-1B sponsorship.</p>
         <div class="chs">
           <a href="mailto:ashishkosana@gmail.com" class="ch"><div class="chi">✉</div><div><span class="chl">Email</span><span class="chv">ashishkosana@gmail.com</span></div></a>
           <a href="https://www.linkedin.com/in/ashish-kosana-3b6712260/" target="_blank" class="ch"><div class="chi">in</div><div><span class="chl">LinkedIn</span><span class="chv">linkedin.com/in/ashishkosana</span></div></a>
           <a href="https://github.com/Ashish1916" target="_blank" class="ch"><div class="chi">gh</div><div><span class="chl">GitHub</span><span class="chv">github.com/Ashish1916</span></div></a>
+        </div>
+      </div>
+      <div class="rv d2">
         <form class="cf" action="https://formspree.io/f/xqegdnlp" method="POST">
-  <input type="hidden" name="_captcha" value="false">
-
-  <div class="cfg">
-    <label class="cfl">Your name</label>
-    <input type="text" name="name" class="cfi" placeholder="Name" required>
+          <input type="hidden" name="_captcha" value="false">
+          <div class="cfg">
+            <label class="cfl">Your name</label>
+            <input type="text" name="name" class="cfi" placeholder="Name" required>
+          </div>
+          <div class="cfg">
+            <label class="cfl">Email</label>
+            <input type="email" name="email" class="cfi" placeholder="email@company.com" required>
+          </div>
+          <div class="cfg">
+            <label class="cfl">Message</label>
+            <textarea name="message" class="cfta" placeholder="Tell me about the role..." required></textarea>
+          </div>
+          <button type="submit" class="cfsb">Send Message →</button>
+        </form>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="cfg">
-    <label class="cfl">Email</label>
-    <input type="email" name="email" class="cfi" placeholder="email@company.com" required>
-  </div>
-
-  <div class="cfg">
-    <label class="cfl">Message</label>
-    <textarea name="message" class="cfta" placeholder="Tell me about the role..." required></textarea>
-  </div>
-
-  <button type="submit" class="cfsb">Send Message →</button>
-</form>
+<!-- FOOTER -->
 <footer>
-  <div class="flo">Ashish <span>Kosana</span></div>
+  <div class="flo">Ashish <em>Kosana</em></div>
   <div class="fco">© 2026 · ashishkosana.com · Open to full-time roles</div>
 </footer>
 
 <script>
-const io = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in') }) }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+const io = new IntersectionObserver(e => {
+  e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in') });
+}, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
 const secs = document.querySelectorAll('section[id]');
 const lks = document.querySelectorAll('.nc a');
 window.addEventListener('scroll', () => {
@@ -633,8 +756,13 @@ window.addEventListener('scroll', () => {
   secs.forEach(s => { if(window.scrollY >= s.offsetTop - 80) c = s.id });
   lks.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#'+c));
 }, {passive:true});
+
 const tik = document.querySelector('.ticker');
-if(tik){ const tr = tik.querySelector('.ti'); tik.addEventListener('mouseenter',()=>tr.style.animationPlayState='paused'); tik.addEventListener('mouseleave',()=>tr.style.animationPlayState='running'); }
+if(tik){
+  const tr = tik.querySelector('.ti');
+  tik.addEventListener('mouseenter', () => tr.style.animationPlayState = 'paused');
+  tik.addEventListener('mouseleave', () => tr.style.animationPlayState = 'running');
+}
 </script>
 </body>
 </html>
