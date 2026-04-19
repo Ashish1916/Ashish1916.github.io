@@ -226,6 +226,24 @@
       aspect-ratio: 16 / 10;
       background: #ebebeb;
       border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      position: ([github.com](https://github.com/Ashish1916/Aws-cost-intelligence-dashboard)): 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tile-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.4;
     }
 
     .tile-image.alt1 { background: #efe7dd; }
@@ -480,7 +498,7 @@
 
         <div class="tiles">
           <article class="tile reveal">
-            <div class="tile-image"></div>
+            <div class="tile-image"><img src="https://raw.githubusercontent.com/Ashish1916/Aws-cost-intelligence-dashboard/main/outputs/cost_intelligence_dashboard.png" alt="AWS Cost Intelligence Dashboard output" loading="lazy" decoding="async" /></div>
             <div class="tile-body">
               <div class="kicker">Cloud Analytics</div>
               <h3>AWS Cost Intelligence Dashboard</h3>
@@ -490,7 +508,7 @@
           </article>
 
           <article class="tile reveal">
-            <div class="tile-image alt1"></div>
+            <div class="tile-image alt1"><img src="https://raw.githubusercontent.com/Ashish1916/Bank-churn-risk-classifier/main/outputs/model_evaluation.png" alt="Bank churn model evaluation output" loading="lazy" decoding="async" /></div>
             <div class="tile-body">
               <div class="kicker">Machine Learning</div>
               <h3>Bank Churn Risk Classifier</h3>
@@ -500,7 +518,7 @@
           </article>
 
           <article class="tile reveal">
-            <div class="tile-image alt2"></div>
+            <div class="tile-image alt2"><div class="tile-placeholder">Sales analytics repository currently does not include a committed dashboard image output.</div></div>
             <div class="tile-body">
               <div class="kicker">Business Intelligence</div>
               <h3>Sales Performance Analytics Platform</h3>
@@ -510,7 +528,7 @@
           </article>
 
           <article class="tile reveal">
-            <div class="tile-image alt3"></div>
+            <div class="tile-image alt3"><img src="https://raw.githubusercontent.com/Ashish1916/student-performance-ml-pipeline/main/outputs/ml_pipeline_results.png" alt="Student performance ML pipeline output" loading="lazy" decoding="async" /></div>
             <div class="tile-body">
               <div class="kicker">ML Pipeline</div>
               <h3>Student Performance ML Pipeline</h3>
