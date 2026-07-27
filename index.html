@@ -520,6 +520,7 @@
       { name: 'ledgerline', description: 'Exactly-once payments service — storage-layer idempotency, a double-entry ledger, a transactional outbox, and a dead-letter queue. FastAPI + Postgres; zero double-charges under concurrent load.', language: 'Python', html_url: 'https://github.com/Ashishkosana/ledgerline' },
       { name: 'tick', description: 'Durable job & cron scheduler on Postgres — SELECT … FOR UPDATE SKIP LOCKED claiming, leases with crash recovery, retries with backoff, and a dead-letter state.', language: 'Python', html_url: 'https://github.com/Ashishkosana/tick' },
       { name: 'review-lens', description: 'Self-verifying LLM code reviewer — runs multiple lenses then a verification pass. Python, CLI + GitHub Action.', language: 'Python', html_url: 'https://github.com/Ashishkosana/review-lens' },
+      { name: 'deref', description: 'A Zachtronics-style DSA game — write real Python, an execution-trace engine runs it, robots walk and a power meter browns out on slow code. Python engine + Flutter client.', language: 'Python', html_url: 'https://github.com/Ashishkosana/deref' },
       { name: 'snip', description: 'URL-shortener API from first principles — FastAPI, base62, per-IP token-bucket rate limiting, Dockerized.', language: 'Python', html_url: 'https://github.com/Ashishkosana/snip' },
     ];
 
@@ -538,14 +539,9 @@
         </a>`).join('');
     }
 
-    fetch('https://api.github.com/users/Ashishkosana/repos?per_page=100&sort=updated')
-      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(repos => {
-        const tagged = repos.filter(r => (r.topics || []).includes('portfolio') && !r.fork);
-        renderProjects(tagged.length ? tagged : FALLBACK);
-        revealCards();
-      })
-      .catch(() => { renderProjects(FALLBACK); revealCards(); });
+    /* Curated + ordered on purpose — leads with real-users and the reliable-systems pair. */
+    renderProjects(FALLBACK);
+    revealCards();
 
     /*===== SCROLL REVEAL ANIMATION =====*/
     const sr = ScrollReveal({ origin: 'top', distance: '60px', duration: 2000, delay: 200 });
