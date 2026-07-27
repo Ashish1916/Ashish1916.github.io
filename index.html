@@ -394,32 +394,24 @@
                             <i class='bx bxl-python skills__icon'></i>
                             <span class="skills__name">Python / FastAPI</span>
                         </div>
-                        <div class="skills__bar skills__python"></div>
-                        <div><span class="skills__percentage">90%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='bx bxl-aws skills__icon'></i>
                             <span class="skills__name">AWS Serverless</span>
                         </div>
-                        <div class="skills__bar skills__aws"></div>
-                        <div><span class="skills__percentage">85%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='bx bxl-typescript skills__icon'></i>
                             <span class="skills__name">Next.js / TypeScript</span>
                         </div>
-                        <div class="skills__bar skills__ts"></div>
-                        <div><span class="skills__percentage">78%</span></div>
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='bx bxl-flutter skills__icon'></i>
                             <span class="skills__name">Flutter / Dart</span>
                         </div>
-                        <div class="skills__bar skills__flutter"></div>
-                        <div><span class="skills__percentage">82%</span></div>
                     </div>
                 </div>
 
@@ -524,10 +516,11 @@
       JavaScript: 'bxl-javascript', HTML: 'bxl-html5', CSS: 'bxl-css3',
     };
     const FALLBACK = [
-      { name: 'Rythu — live demo', description: 'Live full-stack app for Telangana farmers — Next.js/TypeScript front end + Python/AWS serverless backend (Lambda, DynamoDB, API Gateway, CDK). Honest, explainable, Telugu-first.', language: 'TypeScript', stargazers_count: 0, html_url: 'https://main.d3jtg3gae71asa.amplifyapp.com' },
-      { name: 'review-lens', description: 'Self-verifying LLM code reviewer — runs multiple lenses then a verification pass. Python, CLI + GitHub Action, 80+ tests.', language: 'Python', stargazers_count: 0, html_url: 'https://github.com/Ashishkosana/review-lens' },
-      { name: 'career-copilot', description: 'Serverless job-search agent on AWS — CDK-defined (Lambda, DynamoDB, API Gateway, Cognito).', language: 'Python', stargazers_count: 0, html_url: 'https://github.com/Ashishkosana/career-copilot' },
-      { name: 'snip', description: 'URL-shortener API from first principles — FastAPI, base62, per-IP token-bucket rate limiting, Dockerized.', language: 'Python', stargazers_count: 0, html_url: 'https://github.com/Ashishkosana/snip' },
+      { name: 'Rythu — live demo', description: 'Live full-stack app for Telangana farmers — Next.js/TypeScript front end + Python/AWS serverless backend (Lambda, DynamoDB, API Gateway, CDK). Honest, explainable, Telugu-first.', language: 'TypeScript', html_url: 'https://main.d3jtg3gae71asa.amplifyapp.com' },
+      { name: 'ledgerline', description: 'Exactly-once payments service — storage-layer idempotency, a double-entry ledger, a transactional outbox, and a dead-letter queue. FastAPI + Postgres; zero double-charges under concurrent load.', language: 'Python', html_url: 'https://github.com/Ashishkosana/ledgerline' },
+      { name: 'tick', description: 'Durable job & cron scheduler on Postgres — SELECT … FOR UPDATE SKIP LOCKED claiming, leases with crash recovery, retries with backoff, and a dead-letter state.', language: 'Python', html_url: 'https://github.com/Ashishkosana/tick' },
+      { name: 'review-lens', description: 'Self-verifying LLM code reviewer — runs multiple lenses then a verification pass. Python, CLI + GitHub Action.', language: 'Python', html_url: 'https://github.com/Ashishkosana/review-lens' },
+      { name: 'snip', description: 'URL-shortener API from first principles — FastAPI, base62, per-IP token-bucket rate limiting, Dockerized.', language: 'Python', html_url: 'https://github.com/Ashishkosana/snip' },
     ];
 
     function renderProjects(repos) {
@@ -541,7 +534,6 @@
           <p class="work__desc">${r.description || ''}</p>
           <div class="work__meta">
             ${r.language ? `<span><i class='bx bx-code-curly'></i> ${r.language}</span>` : ''}
-            <span><i class='bx bx-star'></i> ${r.stargazers_count}</span>
           </div>
         </a>`).join('');
     }
