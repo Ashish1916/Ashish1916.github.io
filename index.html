@@ -495,7 +495,17 @@
     /*===== MENU SHOW/HIDE =====*/
     const navMenu = document.getElementById('nav-menu');
     document.getElementById('nav-toggle').addEventListener('click', () => navMenu.classList.toggle('show'));
-    document.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', () => navMenu.classList.remove('show')));
+    /* In-page links scroll smoothly WITHOUT leaving a #hash in the URL. */
+    document.querySelectorAll('a[href^="#"]').forEach(l => l.addEventListener('click', (e) => {
+      const id = l.getAttribute('href').slice(1);
+      const target = id ? document.getElementById(id) : document.body;
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      navMenu.classList.remove('show');
+    }));
 
     /*===== ACTIVE LINK ON SCROLL =====*/
     const sections = document.querySelectorAll('section[id]');
