@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashish Kosana — Backend & Full-Stack Software Engineer | Python · FastAPI · AWS</title>
-    <meta name="description" content="Ashish Kosana — Backend & Full-Stack Software Engineer. I build and ship products end to end with Python, FastAPI, and AWS serverless (Lambda, DynamoDB, API Gateway, CDK) — now also Next.js/TypeScript. B.S. Computer Science, UMass Lowell (Dec 2025). New-grad SWE, open to work.">
-    <meta name="keywords" content="Software Engineer, Backend Engineer, Full-Stack Engineer, New Grad, Python, FastAPI, AWS, Lambda, DynamoDB, Next.js, TypeScript, React, Ashish Kosana">
+    <title>Ashish Kosana — Backend &amp; Distributed Systems · Applied AI</title>
+    <meta name="description" content="Ashish Kosana — Backend &amp; Distributed Systems engineer. I build systems that stay correct under retries, crashes, and races (idempotency, exactly-once, SKIP LOCKED) and ship LLM features with evaluation harnesses. Python · AWS · Postgres. B.S. CS, UMass Lowell (Dec 2025). New-grad SWE, open to work.">
+    <meta name="keywords" content="Software Engineer, Backend Engineer, Distributed Systems, Applied AI, New Grad, Python, FastAPI, AWS, PostgreSQL, LLM, RAG, MCP, Ashish Kosana">
     <meta name="theme-color" content="#4F46E5">
     <link rel="canonical" href="https://www.ashishkosana.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ashish Kosana — Backend & Full-Stack Software Engineer">
-    <meta property="og:description" content="I build and ship products end to end — Python · FastAPI · AWS serverless · Next.js/TypeScript. See Rythu, my live full-stack app. New-grad SWE, open to work.">
+    <meta property="og:title" content="Ashish Kosana — Backend &amp; Distributed Systems · Applied AI">
+    <meta property="og:description" content="I build reliable systems and ship LLM features that prove they work — Python · AWS · Postgres. See ledgerline, tick, review-lens, and Rythu (live). New-grad SWE, open to work.">
     <meta property="og:url" content="https://www.ashishkosana.com/">
     <meta property="og:image" content="https://www.ashishkosana.com/ashish-new.jpeg">
     <meta name="twitter:card" content="summary">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌘</text></svg>">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -141,7 +142,7 @@
     .home__data { align-self: center; }
     .home__title { font-size: var(--big-font-size); margin-bottom: var(--mb-2); }
     .home__title-color { color: var(--first-color); }
-    .home__tagline { margin-bottom: var(--mb-5); color: hsl(var(--hue-color), 12%, 38%); max-width: 26rem; }
+    .home__tagline { margin-bottom: var(--mb-5); color: hsl(var(--hue-color), 12%, 38%); max-width: 28rem; }
     .home__buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
     .home__social { display: flex; flex-direction: column; }
     .home__social-icon {
@@ -216,6 +217,11 @@
       font-size: var(--smaller-font-size);
       font-weight: var(--font-semi);
     }
+    .os__callout { justify-self: center; width: 100%; max-width: 46rem; margin-top: 1.5rem; }
+    .os__box { padding: 1.25rem 1.5rem; border-radius: .5rem; box-shadow: 0px 4px 25px rgba(14, 36, 49, .15); border-left: 4px solid var(--first-color); text-align: left; }
+    .os__title { font-size: 1.05rem; font-weight: var(--font-semi); color: var(--first-color); margin-bottom: .5rem; display: flex; align-items: center; gap: .5rem; }
+    .os__title i { font-size: 1.3rem; }
+    .os__text { color: hsl(var(--hue-color), 12%, 32%); font-size: var(--smaller-font-size); line-height: 1.7; }
 
     /* ===== EXPERIENCE =====*/
     .experience__container { row-gap: 2rem; max-width: 40rem; justify-self: center; width: 100%; }
@@ -244,12 +250,16 @@
       background: #fff;
     }
     .work__card:hover { transform: translateY(-6px); box-shadow: 0px 10px 36px rgba(14, 36, 49, .2); }
-    .work__card-header { display: flex; align-items: center; gap: .6rem; margin-bottom: .6rem; }
+    .work__card-header { display: flex; align-items: center; gap: .6rem; margin-bottom: .35rem; }
     .work__card-header i { font-size: 1.5rem; color: var(--first-color); }
     .work__name { font-weight: var(--font-semi); font-size: 1.05rem; }
-    .work__desc { flex: 1; font-size: var(--smaller-font-size); color: hsl(var(--hue-color), 12%, 32%); margin-bottom: 1rem; }
-    .work__meta { display: flex; align-items: center; gap: 1rem; font-size: var(--smaller-font-size); color: hsl(var(--hue-color), 12%, 45%); }
-    .work__meta i { vertical-align: -2px; color: var(--first-color); }
+    .work__stack { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: var(--smaller-font-size); color: var(--first-color-dark); margin-bottom: .6rem; }
+    .work__desc { flex: 1; font-size: var(--smaller-font-size); color: hsl(var(--hue-color), 12%, 32%); margin-bottom: .75rem; }
+    .work__metric { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: var(--smaller-font-size); color: var(--second-color); background: var(--first-color-lighter); border-radius: .4rem; padding: .5rem .7rem; margin-bottom: .9rem; line-height: 1.5; }
+    .work__meta { display: flex; align-items: center; gap: 1.25rem; font-size: var(--smaller-font-size); }
+    .work__meta a { color: var(--first-color); font-weight: var(--font-semi); }
+    .work__meta a:hover { color: var(--first-color-dark); }
+    .work__meta i { vertical-align: -2px; }
     .work__note { text-align: center; font-size: var(--smaller-font-size); color: hsl(var(--hue-color), 12%, 45%); margin-top: var(--mb-4); }
 
     /* ===== CONTACT =====*/
@@ -338,7 +348,7 @@
         <section class="home bd-grid" id="home">
             <div class="home__data">
                 <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Ashish</span><br>Software Engineer</h1>
-                <p class="home__tagline"><strong>Backend &amp; Full-Stack.</strong> I build and ship products end to end with Python, FastAPI, and AWS serverless (Lambda, DynamoDB, API Gateway, CDK) — now also Next.js / TypeScript.</p>
+                <p class="home__tagline"><strong>Backend &amp; Distributed Systems · Applied AI.</strong> I build systems that stay correct under retries, crashes, and races — and I ship LLM features with evaluation harnesses that prove they work. Python · AWS · Postgres.</p>
                 <div class="home__buttons">
                     <a href="https://main.d3jtg3gae71asa.amplifyapp.com" target="_blank" rel="noreferrer" class="button">🌾 Rythu — live demo</a>
                     <a href="#work" class="button button--ghost">View work</a>
@@ -376,7 +386,7 @@
 
                 <div>
                     <h2 class="about__subtitle">I'm Ashish Kosana</h2>
-                    <p class="about__text">Backend &amp; full-stack software engineer at Crewtron, where I ship features end to end — Python backends on AWS serverless (Lambda, DynamoDB, API Gateway, Cognito, CDK) plus the mobile client. Outside work I build in public: <strong>Rythu</strong> (a live Next.js + Python/AWS app), review-lens, and more. I care about boring root causes, readable logs, and shipping things customers actually use. Recent CS grad from UMass Lowell (Dec 2025), based in Tempe, AZ. Open to new-grad SWE roles.</p>
+                    <p class="about__text">Backend engineer who ships LLM-powered features and can prove they work. At Crewtron I build on a production AWS serverless platform (Lambda, DynamoDB, API Gateway, Cognito, CDK) and wired CloudWatch monitoring into Slack so errors surface with the affected users. On my own I build reliable systems — <strong>ledgerline</strong> (exactly-once payments), <strong>tick</strong> (a durable Postgres scheduler), and <strong>review-lens</strong> (a self-verifying LLM reviewer with an evaluation harness). First engineer in my family; I daily-drive Ubuntu on a UTM VM and care about how the system works underneath. Recent CS grad, UMass Lowell (Dec 2025), based in Tempe, AZ. Open to new-grad SWE roles.</p>
                 </div>
             </div>
         </section>
@@ -388,11 +398,17 @@
             <div class="skills__container bd-grid">
                 <div>
                     <h2 class="skills__subtitle">What I work with</h2>
-                    <p class="skills__text">Backend &amp; full-stack: Python + FastAPI on AWS serverless (CDK, Cognito, DynamoDB), with a Next.js / TypeScript front end. Flutter for mobile.</p>
+                    <p class="skills__text">Backend &amp; distributed systems in Python (FastAPI, PostgreSQL) on AWS serverless, plus applied-LLM work behind evaluation harnesses. Full-stack with Next.js / TypeScript; Flutter for mobile; Ubuntu / Linux day to day.</p>
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='bx bxl-python skills__icon'></i>
                             <span class="skills__name">Python / FastAPI</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-server skills__icon'></i>
+                            <span class="skills__name">Distributed systems</span>
                         </div>
                     </div>
                     <div class="skills__data">
@@ -403,14 +419,8 @@
                     </div>
                     <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-typescript skills__icon'></i>
-                            <span class="skills__name">Next.js / TypeScript</span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <i class='bx bxl-flutter skills__icon'></i>
-                            <span class="skills__name">Flutter / Dart</span>
+                            <i class='bx bx-bot skills__icon'></i>
+                            <span class="skills__name">LLM / Applied AI</span>
                         </div>
                     </div>
                 </div>
@@ -418,19 +428,28 @@
                 <div>
                     <h2 class="skills__subtitle">Also in the toolbox</h2>
                     <div class="skills__extra">
+                        <span class="skills__tag">Distributed systems</span>
+                        <span class="skills__tag">Idempotency · exactly-once</span>
+                        <span class="skills__tag">SKIP LOCKED</span>
                         <span class="skills__tag">FastAPI</span>
-                        <span class="skills__tag">Next.js</span>
-                        <span class="skills__tag">React</span>
-                        <span class="skills__tag">REST APIs</span>
-                        <span class="skills__tag">Lambda</span>
-                        <span class="skills__tag">DynamoDB</span>
-                        <span class="skills__tag">API Gateway</span>
-                        <span class="skills__tag">Cognito</span>
-                        <span class="skills__tag">AWS CDK</span>
-                        <span class="skills__tag">Docker</span>
                         <span class="skills__tag">PostgreSQL / SQL</span>
-                        <span class="skills__tag">CI/CD</span>
+                        <span class="skills__tag">LLM · RAG · MCP</span>
+                        <span class="skills__tag">Evaluation harnesses</span>
+                        <span class="skills__tag">AWS Lambda · CDK · DynamoDB</span>
+                        <span class="skills__tag">Docker</span>
+                        <span class="skills__tag">Next.js / React</span>
+                        <span class="skills__tag">TypeScript</span>
+                        <span class="skills__tag">C / C++</span>
+                        <span class="skills__tag">Linux / Ubuntu</span>
+                        <span class="skills__tag">pytest · mypy · CI/CD</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="os__callout bd-grid">
+                <div class="os__box">
+                    <h3 class="os__title"><i class='bx bx-terminal'></i> Operating systems</h3>
+                    <p class="os__text">Comfortable across <strong>macOS + Linux</strong>. I daily-drive <strong>Ubuntu 26.04 (ARM64)</strong> in a UTM virtual machine on my Apple&nbsp;M4 — apt, shell scripting, systemd, drivers, manual partitioning — and I ship to Linux every day on AWS Lambda and Docker. I understand what the kernel does (processes, memory, and how programs reach it through system calls) and I care about how the system works underneath, not just the app on top.</p>
                 </div>
             </div>
         </section>
@@ -443,12 +462,12 @@
                 <div class="experience__item">
                     <h3 class="experience__role">Software Engineer Intern — <span class="experience__company">Crewtron</span></h3>
                     <p class="experience__dates">May 2026 – Present · Tempe, AZ</p>
-                    <p class="experience__desc">Ship features end to end on an AI-powered field-service platform: Python backends on AWS serverless (Lambda, DynamoDB, API Gateway, Cognito, CDK) + the Flutter client. Built clock-in/geofencing with a live crew map, Stripe payments, Cognito-secured REST APIs, and an API integration-test suite (~82% coverage).</p>
+                    <p class="experience__desc">Ship features end to end on an AI-powered field-service platform: Python backends on AWS serverless (Lambda, DynamoDB, API Gateway, Cognito, CDK) + the Flutter client. Designed Cognito-secured REST APIs, wired CloudWatch monitoring into Slack, built a multi-agent LLM content system, and authored an API integration-test suite (~82% coverage).</p>
                 </div>
                 <div class="experience__item">
                     <h3 class="experience__role">B.S. Computer Science — <span class="experience__company">UMass Lowell</span></h3>
                     <p class="experience__dates">Sept 2024 – Dec 2025</p>
-                    <p class="experience__desc">Graduated December 2025. Focus on software engineering and systems.</p>
+                    <p class="experience__desc">Graduated December 2025 · GPA 3.51 / 4.0 · Dean's List. Focus on software engineering and systems.</p>
                 </div>
             </div>
         </section>
@@ -458,9 +477,9 @@
             <h2 class="section-title">Work</h2>
 
             <div class="work__container bd-grid" id="work-grid">
-                <!-- Project cards render here from the GitHub API -->
+                <!-- Project cards render here -->
             </div>
-            <p class="work__note">Live from <a href="https://github.com/Ashishkosana" target="_blank" rel="noreferrer" style="color: var(--first-color); font-weight: 600;">my GitHub</a> — repos tagged <code>portfolio</code> appear here automatically.</p>
+            <p class="work__note">More on <a href="https://github.com/Ashishkosana" target="_blank" rel="noreferrer" style="color: var(--first-color); font-weight: 600;">my GitHub</a> — 25+ public repos.</p>
         </section>
 
         <!--===== CONTACT =====-->
@@ -468,7 +487,7 @@
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <p class="contact__text">Open to new-grad <strong>Backend / Full-Stack Software Engineer</strong> roles (authorized to work in the U.S. on F-1 OPT). The fastest ways to reach me:</p>
+                <p class="contact__text">Open to new-grad <strong>Backend / Full-Stack / Applied-AI Software Engineer</strong> roles (authorized to work in the U.S. on F-1 OPT — STEM, ~3 years, no sponsorship needed to start). The fastest ways to reach me:</p>
                 <div class="contact__links">
                     <a href="mailto:ashishkosana@gmail.com" class="button">Email me</a>
                     <a href="https://www.linkedin.com/in/ashishkosana/" target="_blank" rel="noreferrer" class="button button--ghost">LinkedIn</a>
@@ -518,39 +537,58 @@
       });
     });
 
-    /*===== PROJECTS — live from the GitHub API =====*/
-    /* Any public repo tagged with the `portfolio` topic shows up here
-       automatically — no redeploy needed for new projects. */
+    /*===== PROJECTS — curated, strongest first =====*/
     const LANG_ICONS = {
       Python: 'bxl-python', Dart: 'bxl-flutter', TypeScript: 'bxl-typescript',
       JavaScript: 'bxl-javascript', HTML: 'bxl-html5', CSS: 'bxl-css3',
     };
-    const FALLBACK = [
-      { name: 'Rythu — live demo', description: 'Live full-stack app for Telangana farmers — Next.js/TypeScript front end + Python/AWS serverless backend (Lambda, DynamoDB, API Gateway, CDK). Honest, explainable, Telugu-first.', language: 'TypeScript', html_url: 'https://main.d3jtg3gae71asa.amplifyapp.com' },
-      { name: 'ledgerline', description: 'Exactly-once payments service — storage-layer idempotency, a double-entry ledger, a transactional outbox, and a dead-letter queue. FastAPI + Postgres; zero double-charges under concurrent load.', language: 'Python', html_url: 'https://github.com/Ashishkosana/ledgerline' },
-      { name: 'tick', description: 'Durable job & cron scheduler on Postgres — SELECT … FOR UPDATE SKIP LOCKED claiming, leases with crash recovery, retries with backoff, and a dead-letter state.', language: 'Python', html_url: 'https://github.com/Ashishkosana/tick' },
-      { name: 'review-lens', description: 'Self-verifying LLM code reviewer — runs multiple lenses then a verification pass. Python, CLI + GitHub Action.', language: 'Python', html_url: 'https://github.com/Ashishkosana/review-lens' },
-      { name: 'deref', description: 'A Zachtronics-style DSA game — write real Python, an execution-trace engine runs it, robots walk and a power meter browns out on slow code. Python engine + Flutter client.', language: 'Python', html_url: 'https://github.com/Ashishkosana/deref' },
-      { name: 'snip', description: 'URL-shortener API from first principles — FastAPI, base62, per-IP token-bucket rate limiting, Dockerized.', language: 'Python', html_url: 'https://github.com/Ashishkosana/snip' },
+    const PROJECTS = [
+      { name: 'ledgerline', language: 'Python', stack: 'Python · FastAPI · PostgreSQL · Docker',
+        description: 'Exactly-once payments — client retries cannot slip a second charge through. Storage-layer idempotency over a payment state machine, a double-entry ledger with automated reconciliation, and a transactional outbox with a dead-letter queue.',
+        metric: '0 double-charges / 200 concurrent · ~1,460 tx/sec · 27 tests',
+        source: 'https://github.com/Ashishkosana/ledgerline' },
+      { name: 'tick', language: 'Python', stack: 'Python · SQLAlchemy · PostgreSQL',
+        description: 'Durable job & cron scheduler on Postgres — many workers, one job each, and a crashed worker gets its job reclaimed. Retries with backoff, dead-letter state, recurring schedules.',
+        metric: 'SELECT … FOR UPDATE SKIP LOCKED · 500 jobs / 10 workers · zero collisions · 14 tests',
+        source: 'https://github.com/Ashishkosana/tick' },
+      { name: 'review-lens', language: 'Python', stack: 'Python · LLM · GitHub Action',
+        description: 'Self-verifying LLM code reviewer — runs independent lenses (correctness, security, performance, tests), then adversarially checks its own findings to cut false positives.',
+        metric: 'evaluation harness · precision/recall/F1 · 81 tests · mypy --strict',
+        source: 'https://github.com/Ashishkosana/review-lens' },
+      { name: 'jobs-mcp', language: 'Python', stack: 'Python · Model Context Protocol',
+        description: 'Authored a Model Context Protocol (MCP) server that exposes live US software-engineering jobs as tools any AI client can discover and call — pulling from company ATS boards, no API keys.',
+        metric: 'MCP tools over stdio · concurrent ATS fetch · per-source failure isolation · MIT',
+        source: 'https://github.com/Ashishkosana/jobs-mcp' },
+      { name: 'Rythu', language: 'TypeScript', stack: 'Next.js · TypeScript · Python · AWS Lambda · DynamoDB · CDK',
+        description: 'Telugu-first farmer advisory app — deployed, with real users including my father. Weather, crop advice, and market prices, server-rendered over a Python/AWS serverless backend.',
+        metric: 'deployed · real users · DynamoDB TTL cache · ~135 tests · CI green',
+        demo: 'https://main.d3jtg3gae71asa.amplifyapp.com',
+        source: 'https://github.com/Ashishkosana/rythu' },
+      { name: 'askdocs-rag', language: 'Python', stack: 'Python · RAG · Chroma · LLM',
+        description: 'Document Q and A with a retrieval and answer-quality evaluation harness — grounded, cited answers that abstain when the answer is not in the docs.',
+        metric: 'hit@k / MRR retrieval · LLM-as-judge for faithfulness · 19 tests',
+        source: 'https://github.com/Ashishkosana/askdocs-rag' },
     ];
 
     function renderProjects(repos) {
       const grid = document.getElementById('work-grid');
       grid.innerHTML = repos.map(r => `
-        <a class="work__card" href="${r.html_url}" target="_blank" rel="noreferrer">
+        <div class="work__card">
           <div class="work__card-header">
             <i class='bx ${LANG_ICONS[r.language] || 'bx-code-alt'}'></i>
             <span class="work__name">${r.name}</span>
           </div>
+          ${r.stack ? `<div class="work__stack">${r.stack}</div>` : ''}
           <p class="work__desc">${r.description || ''}</p>
+          ${r.metric ? `<div class="work__metric">${r.metric}</div>` : ''}
           <div class="work__meta">
-            ${r.language ? `<span><i class='bx bx-code-curly'></i> ${r.language}</span>` : ''}
+            ${r.demo ? `<a href="${r.demo}" target="_blank" rel="noreferrer"><i class='bx bx-play-circle'></i> live demo</a>` : ''}
+            ${r.source ? `<a href="${r.source}" target="_blank" rel="noreferrer"><i class='bx bxl-github'></i> source</a>` : ''}
           </div>
-        </a>`).join('');
+        </div>`).join('');
     }
 
-    /* Curated + ordered on purpose — leads with real-users and the reliable-systems pair. */
-    renderProjects(FALLBACK);
+    renderProjects(PROJECTS);
     revealCards();
 
     /*===== SCROLL REVEAL ANIMATION =====*/
@@ -558,7 +596,7 @@
     sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
     sr.reveal('.home__img, .about__subtitle, .about__text', { delay: 400 });
     sr.reveal('.home__social-icon', { interval: 200 });
-    sr.reveal('.skills__data, .experience__item, .contact__container', { interval: 200 });
+    sr.reveal('.skills__data, .os__box, .experience__item, .contact__container', { interval: 200 });
     function revealCards() { sr.reveal('.work__card', { interval: 150 }); }
     </script>
 </body>
